@@ -28,7 +28,7 @@ function ChangeCard() {
       try {
         console.log(newcard,'newcard');
         const res = await axios.patch(
-          `http://localhost:8888/products/${idChange}`, newcard);
+          `https://what-to-eat.herokuapp.com/products/${idChange}`, newcard);
         console.log(res, ' iii');
         setvacations(true)
         setchangecard(false)
@@ -44,7 +44,7 @@ function ChangeCard() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8888/products/${idChange}`
+          `https://what-to-eat.herokuapp.com/products/${idChange}`
         );
         console.log(res.data, "asasas");
         setCards([res.data]);

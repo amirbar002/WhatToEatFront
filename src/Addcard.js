@@ -23,7 +23,7 @@ const info = (e) =>{
 
     useEffect(()=>{
          console.log(alldata);
-      axios.post('http://localhost:8888/products/',alldata) 
+      axios.post('https://what-to-eat.herokuapp.com/products/',alldata) 
         .then(res => console.log(res.data))
         .catch(err => console.log(err))
          

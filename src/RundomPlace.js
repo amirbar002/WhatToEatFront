@@ -30,7 +30,7 @@ const remove = async (e)=>{
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8888/followes/${value}?withRelations=true`
+          `https://what-to-eat.herokuapp.com/followes/${value}?withRelations=true`
         );
         setProducts(res.data);
         setrender(false)

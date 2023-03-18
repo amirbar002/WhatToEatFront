@@ -37,7 +37,7 @@ function Registration() {
     const postData = async () => {
       try {
         const res = await axios.post(
-          "http://localhost:8888/person/register",
+          "https://what-to-eat.herokuapp.com/person/register",
           alldata
         );
         console.log(res, "res");
