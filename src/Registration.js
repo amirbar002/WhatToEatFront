@@ -66,7 +66,7 @@ function Registration() {
       
       <Form onSubmit={handleSubmit(onSubmitt)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>your email</Form.Label>
+          <Form.Label>איימל </Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter email"
@@ -76,10 +76,10 @@ function Registration() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>סיסמא כוללת אות קטנה אות גדולה ומספר</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="סיסמא כוללת אות קטנה אות גדולה ומספר"
             {...register("password")}
           />
         </Form.Group>
@@ -87,7 +87,7 @@ function Registration() {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Register
+          הרשמה
         </Button>
       </Form>
     </div>

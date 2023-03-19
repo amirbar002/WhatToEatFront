@@ -76,7 +76,7 @@ function SingIn() {
     <div className="divSIngIn">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Your email</Form.Label>
+          <Form.Label>איימל</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter email"
@@ -85,7 +85,7 @@ function SingIn() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>סיסמא </Form.Label>
           <Form.Control
             type="password"
             placeholder="Password"
@@ -94,7 +94,7 @@ function SingIn() {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Sign in
+         כניסה
         </Button>
       </Form>
     </div>

@@ -46,6 +46,7 @@ const remove = async (e)=>{
     <div>
         <div>
             <h1>Rundom place</h1>
+            <h4>אין עדין מספיק מסעדות בשביל זה</h4>
         </div>
     <div>
      

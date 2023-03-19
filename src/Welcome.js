@@ -21,14 +21,14 @@ function Welcome() {
     }
   return (
     <div className="divwelcome" >
-      <h1>Welcome</h1>
-      <p>Here you can find the hottest destinations at the cheapest price</p>
-      <p>To start click on registration with you have a user click on singin</p>
+      <h1>ברוכים הבאים</h1>
+      <p>האתר מה אוכלים זה פרוייקט סיים הלימודים שלי </p>
+      <p>באתר זה ניתן למצוא מסעדות ותגובות על מסעדות וגם להוסיף</p>
       <Button variant="primary" size="lg" onClick={Register} >
-        Register
+        הרשמה
       </Button>{" "}
       <Button variant="primary" size="lg" onClick={SingIn}>
-        SingIn
+        כניסה
       </Button>
     </div>
   );
