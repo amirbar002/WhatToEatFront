@@ -20,12 +20,25 @@ function Addcard() {
 
   useEffect(() => {
     console.log(alldata);
-    axios
-      .post("https://what-to-eat.herokuapp.com/products/", alldata)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-    setadminnavbar(false);
-    setvacations(true)
+    if (!alldata.text) {
+      return console.log("hh");
+    }
+
+    const add = async () => {
+      try {
+        const res = await axios.post( "https://what-to-eat.herokuapp.com/products/", alldata)
+       if(res.data === undefined) {
+        return 
+       }
+       setadminnavbar(false);
+       setvacations(true)
+
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+    add()
   }, [alldata]);
 
   const onSubmitt = (data) => {
