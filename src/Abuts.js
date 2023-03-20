@@ -2,7 +2,7 @@ import React from 'react'
 
 function Abuts() {
   return (
-    <div>
+    <div className='abuts' >
       <h1>מה אוכלים</h1>
       <h4>אמיר בר</h4>
       <h5>0526882146</h5>

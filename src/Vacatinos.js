@@ -115,6 +115,9 @@ function Vacatinos() {
   };
 
   const post = async (e) => {
+    if(!inputValue){
+      return alert('לא כתוב כלום')
+    }
     setCardId(e.target.id);
     console.log(e.target.id);
     console.log(inputValue);

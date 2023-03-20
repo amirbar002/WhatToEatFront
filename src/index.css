@@ -19,7 +19,7 @@ code {
 
 .divwelcome{
   color: white;
-margin-top: 200px;
+  margin-top: 18%;
 
 }
 
@@ -136,3 +136,6 @@ margin-top: 200px;
   margin-left: 400px;
 }
 
+.abuts{
+  color: white;
+}
