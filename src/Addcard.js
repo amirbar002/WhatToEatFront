@@ -13,15 +13,15 @@ function Addcard() {
   const { vacations, setvacations } = useContext(UserContext);
 
   const info = (e) => {
-   ("info");
+    console.log("info");
     setadminnavbar(false);
     setmoreInfo(true);
   };
 
   useEffect(() => {
-   (alldata);
+    console.log(alldata);
     if (!alldata.text) {
-      return("hh");
+      return console.log("hh");
     }
 
     const add = async () => {
@@ -34,7 +34,7 @@ function Addcard() {
        setvacations(true)
 
       } catch (error) {
-       (error);
+        console.log(error);
       }
 
     }
@@ -42,9 +42,9 @@ function Addcard() {
   }, [alldata]);
 
   const onSubmitt = (data) => {
-   ("sbmit");
-   (data);
-   ("sbmit");
+    console.log("sbmit");
+    console.log(data);
+    console.log("sbmit");
     if (!data.text) {
       return alert("צריך למלא את כל הפרטים");
     }

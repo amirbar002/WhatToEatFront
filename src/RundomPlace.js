@@ -17,16 +17,16 @@ function RundomPlace() {
   const [theId, settheId] = useState(0);
 
   const onSubmitt = (data) => {
-   ("sbmit");
-   (data, "data");
-   (products, "products");
+    console.log("sbmit");
+    console.log(data, "data");
+    console.log(products, "products");
     products.map((product) => {
       product.district.toString();
-     (product.district,'hhhh');
-     (product.district, "district");
+      console.log(product.district,'hhhh');
+      console.log(product.district, "district");
       if ((product.district = data.district)) {
         setproductCategory(product);
-       (product, "product category");
+        console.log(product, "product category");
         setLoading(true);
       }
     });

@@ -33,7 +33,7 @@ function SingIn() {
 
   const onSubmit = (data) => {
     if (loading === true) {
-      return("hahahaah");
+      return console.log("hahahaah");
     }
     setData(data);
     setLoading(true);
@@ -49,13 +49,11 @@ function SingIn() {
           alldata,
           config
         );
-       (res.data, "singin data");
-       (res.data.id);
         setValue(res.data.id);
         setusername(res.data.email)
         if(res.data.id === 1){
           setisAdmin(true)
-         ('is admin');
+          console.log('is admin');
         }
         setsingInPage(false);
         setvacations(true);
