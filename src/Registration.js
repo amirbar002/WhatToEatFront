@@ -25,9 +25,9 @@ function Registration() {
 
   const onSubmitt = (data) => {
     if (loading === true) {
-      return console.log("hahahaah");
+      return("hahahaah");
     }
-    console.log("sbmit");
+   ("sbmit");
     setdata(data);
     setLoading(true);
   };
@@ -40,8 +40,8 @@ function Registration() {
           "https://what-to-eat.herokuapp.com/person/register",
           alldata
         );
-        console.log(res, "res");
-        console.log(res.data.newCustomer.id, "res.locals");
+       (res, "res");
+       (res.data.newCustomer.id, "res.locals");
         setValue(res.data.newCustomer.id)
         localStorage.removeItem("accessToken");
         localStorage.setItem(

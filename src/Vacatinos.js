@@ -32,10 +32,10 @@ function Vacatinos() {
   const remove = (e) => {
     e.stopPropagation();
     if (removeItem === true) {
-      return console.log("lalal");
+      return("lalal");
     }
     const id = e.target.id;
-    console.log("remove", id);
+   ("remove", id);
     setidToDelete(id);
     setRemoveItem(true);
   };
@@ -44,33 +44,33 @@ function Vacatinos() {
     setvacations(false);
     setchangecard(true);
     setidChange(e.target.id);
-    console.log("change", e.target.id);
+   ("change", e.target.id);
   };
 
   const handleRatingChange = (e) => {
-    console.log(e, "handleRatingChange");
+   (e, "handleRatingChange");
     setRating(e);
   };
 
   const revies = async () => {
     try {
       setreviesCard([]);
-      console.log(cardId, "running");
+     (cardId, "running");
       const res = await axios.get(`https://what-to-eat.herokuapp.com/review/${cardId}`);
-      console.log(res);
+     (res);
       setreviesCard(res.data);
-      console.log(res.data, "revies");
+     (res.data, "revies");
     } catch (error) {
       console.error(error);
     }
   };
   useEffect(() => {
     const id = idToDelete;
-    console.log("id", id);
+   ("id", id);
     const fetchData = async () => {
       try {
         const res = await axios.delete(`https://what-to-eat.herokuapp.com/products/${id}`);
-        console.log(res);
+       (res);
         return setRemoveItem(false);
       } catch (error) {
         console.error(error);
@@ -94,13 +94,13 @@ function Vacatinos() {
 
   useEffect(() => {
     if (!loading) return;
-    console.log("add folowes");
+   ("add folowes");
     const obj = { personId: value, productId: cardId, products: cardId };
     const fetchData = async () => {
       try {
         const res = await axios.post("https://what-to-eat.herokuapp.com/followes/", obj);
         // setCards(res.data);
-        console.log(res.data);
+       (res.data);
         return setLoading(false);
       } catch (error) {
         console.error(error);
@@ -119,8 +119,8 @@ function Vacatinos() {
       return alert('לא כתוב כלום')
     }
     setCardId(e.target.id);
-    console.log(e.target.id);
-    console.log(inputValue);
+   (e.target.id);
+   (inputValue);
     const id = parseInt(e.target.id);
     const obj = {
       text: inputValue,
@@ -131,11 +131,11 @@ function Vacatinos() {
       products: [id],
     };
     try {
-      console.log(obj, "obj");
+     (obj, "obj");
       const res = await axios.post("https://what-to-eat.herokuapp.com/Review/", obj);
-      console.log(res, "okk");
+     (res, "okk");
     } catch (error) {
-      console.log(error);
+     (error);
     }
     revies(e);
   };
@@ -146,7 +146,7 @@ function Vacatinos() {
       setdivhideandshow({ id: e.target.id, bol: false });
       return setbuttondivhideandshow("לתגובות");
     }
-    console.log("noooooooooooooooo");
+   ("noooooooooooooooo");
     setdivhideandshow({ id: e.target.id, bol: true });
     setbuttondivhideandshow("חזרה");
     revies(e);
@@ -267,7 +267,7 @@ function Vacatinos() {
                       (rcard) =>
                         rcard.productId === card.id && (
                           <ListGroup key={rcard.id}>
-                            <ListGroup.Item>{rcard.name}: {rcard.text} <Rating rating={4} />  </ListGroup.Item>
+                            <ListGroup.Item>{rcard.name}: {rcard.text} </ListGroup.Item>
                           </ListGroup>
                         )
                     )}
