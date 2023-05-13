@@ -139,6 +139,9 @@ code {
 .abuts{
   color: white;
 }
-.rundomplace{
-  color: white;
+
+.rundomCardPlace{
+display: flex;
+justify-content: center;
 }
+

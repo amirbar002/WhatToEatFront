@@ -3,49 +3,52 @@ import { UserContext } from "./UserContext";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import { Row, Col, Card, ListGroup, Form } from "react-bootstrap";
 
 function RundomPlace() {
   const { register, handleSubmit } = useForm();
   const [loading, setLoading] = useState(false); //dont work
-  const [products, setproducts] = useState([]);
+  const [products, setproducts] = useState("");
   const [productCategory, setproductCategory] = useState([]); //work
   const [theId, settheId] = useState(0);
+  const [num, setnum] = useState(0);
+  const [randomIndex, setRandomIndex] = useState(null);
 
   const onSubmitt = (data) => {
     console.log("sbmit");
-    console.log(data, "data");
-    console.log(products, "products");
-    products.map((product) => {
-      product.district.toString();
-      console.log(product.district,'hhhh');
-      console.log(product.district, "district");
-      if ((product.district = data.district)) {
-        setproductCategory(product);
-        console.log(product, "product category");
-        setLoading(true);
-      }
-    });
+    console.log(data, "data"); //data = 1 string
+    settheId(parseInt(data.district));
+  };
+
+  const handleClick = () => {
+    if (products.length == 0 || products == null) {
+      return alert("צריך לבחור קודם מחוז")
+    }
+    const index = Math.floor(Math.random() * num);
+    setRandomIndex(index);
   };
 
   useEffect(() => {
+    if (theId === 0) {
+      return console.log("the id 0");
+    }
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `https://what-to-eat.herokuapp.com/products/`
+          `https://what-to-eat.herokuapp.com/products/rundom/${theId}`
         );
+        console.log(res.data, "asasas");
+        if (res.data.length == 0) {
+          return alert("עדין לא הוכנסו מסעדות למחוז זה");
+        }
+        setnum(res.data.length);
         setproducts(res.data);
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
-  });
-
+  }, [theId]);
   return (
     <div className="rundomplace">
       <div>
@@ -68,7 +71,34 @@ function RundomPlace() {
           <input type="submit" />
         </Form>
       </div>
-      {loading && <div>{productCategory}</div>}
+      <div className="rundomCardPlace">
+        <div className="miniDivRundomPlace">
+          <button onClick={handleClick}>Generate random symbol</button>
+          {randomIndex !== null && (
+            <Card style={{ width: "30rem", marginRight: "30px" }}>
+              <Card.Img
+                className="restimg"
+                variant="top"
+                src={products[randomIndex].img}
+              />
+              <Card.Body>
+                <Card.Title>{products[randomIndex].Card_Title}</Card.Title>
+                <Card.Text>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item>
+                      {products[randomIndex].text}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      {products[randomIndex].location}
+                    </ListGroup.Item>
+                    <ListGroup.Item></ListGroup.Item>
+                  </ListGroup>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
